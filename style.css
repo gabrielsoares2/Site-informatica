@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 50px;
+}
+
+.cabecalho_nav_anchor {
+    text-decoration: none;
+}
+
+.apresentacao_titulo {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 9.375rem;
+}
+
+.titulo {
+    font-size: 3rem;
+}
+
+.apresentacao_conteudo {
+    background-color: burlywood;
+    padding-top: 20px;
+    padding-left: 1.25rem;
+}
+
+.apresentacao_conteudo_titulo {
+    font-size: 2rem;
+}
+
+.apresentacao_conteudo_texto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.apresentacao_conteudo_texto_office {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apresentacao_conteudo_imagem {
+    height: 300px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.conceitos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.conceitos_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    height: 30px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
