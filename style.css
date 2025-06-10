@@ -1,6 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+:root {
+
+    --font-titulo: "Montserrat", sans-serif;
+    --font-texto: "Open Sans", sans-serif;
+    --font-botao: "Nunito", sans-serif;
+
+    --cor-de-fundo: #F2F2F2;
+    --cor-de-titulo: #003366;
+    --cor-de-texto: #000000;
+    --cor-do-botao: #0099FF;
+    --cor-do-botao-hover: #007ACC;
+    --cor-da-fonte-botao: #000000;
+    --cor-da-fonte-botao-hover: #FFFFFF;
+
+}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+h3 {
+    font-family: var(--font-texto);
 }
 
 .cabecalho {
@@ -25,16 +49,19 @@
 
 .titulo {
     font-size: 3rem;
+    font-family: var(--font-titulo);
 }
 
 .apresentacao_conteudo {
     background-color: burlywood;
     padding-top: 20px;
     padding-left: 1.25rem;
+    padding-bottom: 4rem;
 }
 
 .apresentacao_conteudo_titulo {
     font-size: 2rem;
+    font-family: var(--font-botao);
 }
 
 .apresentacao_conteudo_texto {
@@ -47,10 +74,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+}
+
+.apresentacao_conteudo_mt_links {
+    font-family: var(--font-texto);
+}
+
+.apresentacao_conteudo_jogos {
+    font-family: var(--font-texto);
 }
 
 .apresentacao_conteudo_imagem {
-    height: 300px;
+    height: 250px;
     width: auto;
     vertical-align: middle;
 }
@@ -65,6 +101,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
 .rodape {
