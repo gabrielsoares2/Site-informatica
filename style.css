@@ -23,8 +23,36 @@
     padding: 0;
 }
 
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 37.57px;
+    letter-spacing: 0.19em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(51, 168, 219, 1);
+    text-transform: uppercase;
+}
+
+h2 {
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(51, 168, 219, 1);
+    text-transform: uppercase;
+}
+
 h3 {
     font-family: var(--font-texto);
+    color: #F2F2F2;
+}
+
+h4 {
+    color: #F2F2F2;
+}
+
+a {
+    color: beige;
 }
 
 .cabecalho {
@@ -33,10 +61,26 @@ h3 {
     justify-content: center;
     gap: 1rem;
     height: 50px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0), rgb(5, 30, 48), rgba(0, 0, 0));
+    border-bottom: 1px solid rgba(51, 168, 219, 1);
+}
+
+.cabecalho:before {
+    content: "";
+    position: absolute;
+    background-image: url(img/cabecalho.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
 }
 
 .cabecalho_nav_anchor {
     text-decoration: none;
+    color: #F2F2F2;
 }
 
 .apresentacao_titulo {
@@ -45,6 +89,8 @@ h3 {
     align-items: center;
     justify-content: center;
     height: 9.375rem;
+    background-color: black;
+    color: white;
 }
 
 .titulo {
@@ -53,10 +99,24 @@ h3 {
 }
 
 .apresentacao_conteudo {
-    background-color: burlywood;
     padding-top: 20px;
     padding-left: 1.25rem;
     padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0), rgb(5, 30, 48), rgba(0, 0, 0));
+    border-bottom: 1px solid rgba(51, 168, 219, 1);
+}
+
+.apresentacao_conteudo:before {
+    content: "";
+    position: absolute;
+    background-image: url(img/cabecalho.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
 }
 
 .apresentacao_conteudo_titulo {
@@ -79,10 +139,12 @@ h3 {
 
 .apresentacao_conteudo_mt_links {
     font-family: var(--font-texto);
+    color: #F2F2F2;
 }
 
 .apresentacao_conteudo_jogos {
     font-family: var(--font-texto);
+    color: #F2F2F2;
 }
 
 .apresentacao_conteudo_imagem {
@@ -102,6 +164,11 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+#mouse_teclado {
+    background-color: black;
+    color: white;
 }
 
 .rodape {
