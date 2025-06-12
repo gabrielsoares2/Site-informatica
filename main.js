@@ -1,6 +1,8 @@
 let word = document.getElementById("word");
 let excel = document.getElementById("excel");
 let powerpoint = document.getElementById("powerpoint");
+let hardware = document.getElementById("hardware");
+let software = document.getElementById("software");
 
 word.addEventListener("mouseover", () =>{
     word.textContent = "Word";
@@ -30,4 +32,24 @@ powerpoint.addEventListener("mouseover", () =>{
 powerpoint.addEventListener("mouseout", () =>{
     powerpoint.textContent = "Apresentações";
     powerpoint.style.color = "#F2F2F2"
+})
+
+hardware.addEventListener("mouseover", () =>{
+    hardware.innerHTML = "Toda parte física do computador<br> Tudo que podemos tocar com nossas mãos";
+    hardware.style.color = "rgba(51, 168, 219, 1)";
+})
+
+hardware.addEventListener("mouseout", () =>{
+    hardware.textContent = "Hardware";
+    hardware.style.color = "#F2F2F2"
+})
+
+software.addEventListener("mouseover", () =>{
+    software.innerHTML = "Toda parte lógica do computador<br> (Programas, Arquivos, Jogos, etc...)";
+    software.style.color = "rgba(51, 168, 219, 1)";
+})
+
+software.addEventListener("mouseout", () =>{
+    software.textContent = "Software";
+    software.style.color = "#F2F2F2"
 })
