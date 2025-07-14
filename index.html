@@ -14,8 +14,9 @@
         <nav class="cabecalho_nav"><a class="cabecalho_nav_anchor" href="#mouse_teclado">Mouse e Teclado</a></nav>
         <nav class="cabecalho_nav"><a class="cabecalho_nav_anchor" href="#conceitos">Conceitos da Informática</a></nav>
         <nav class="cabecalho_nav"><a class="cabecalho_nav_anchor" href="#jogos">Jogos</a></nav>
-        <input type="text" placeholder="Deixe sua opinião aqui">
-        <input type="button" value="Enviar">
+        <input type="text" id="feedback" placeholder="Deixe sua opinião aqui">
+        <input type="button" value="Enviar" onclick="enviarFeedback()">
+        <p id="mensagem-status" style="margin-left: 10px; color: green;"></p>
     </header>
 
     <main class="apresentacao">
@@ -107,28 +108,48 @@
     <script defer src="https://vercel.live/_analytics/script.js"></script>
 
     <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
         apiKey: "AIzaSyCFXV-bYPLQzEU56_tgiGXaR0iWWW-rbxc",
         authDomain: "feedbacksite-df5dd.firebaseapp.com",
         projectId: "feedbacksite-df5dd",
-        storageBucket: "feedbacksite-df5dd.firebasestorage.app",
+        storageBucket: "feedbacksite-df5dd.appspot.com",
         messagingSenderId: "55075036771",
         appId: "1:55075036771:web:c58205f37627324cf1e256",
         measurementId: "G-GT6TTMWXDX"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    </script>
+    const db = getFirestore(app);
+
+    // Vincula a função ao clique do botão
+    document.querySelector('input[type="button"]').addEventListener('click', async () => {
+        const texto = document.getElementById('feedback').value;
+        const status = document.getElementById('mensagem-status');
+
+        if (texto.trim() === "") {
+            status.innerText = "Por favor, escreva algo.";
+            return;
+        }
+
+        try {
+            await addDoc(collection(db, "feedbacks"), {
+                mensagem: texto,
+                data: new Date()
+            });
+            status.innerText = "Feedback enviado com sucesso!";
+            document.getElementById('feedback').value = "";
+        } catch (error) {
+            console.error("Erro ao enviar feedback: ", error);
+            status.innerText = "Erro ao enviar. Tente novamente.";
+        }
+    });
+</script>
+
 
 </body>
 
