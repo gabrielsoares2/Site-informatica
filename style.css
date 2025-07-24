@@ -141,7 +141,13 @@ a {
 }
 
 .apresentacao_conteudo_imagem {
-    height: 250px;
+    height: 230px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.apresentacao_conteudo_imagem_software {
+    height: 150px;
     width: auto;
     vertical-align: middle;
 }
@@ -157,6 +163,27 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+.internos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.externos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.softwares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
 }
 
 #mouse_teclado {
