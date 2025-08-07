@@ -146,6 +146,16 @@ a {
     vertical-align: middle;
 }
 
+.apresentacao_conteudo_imagem_guias {
+    width: 1000px;
+    height: auto;
+}
+
+.apresentacao_conteudo_imagem_m_m_x {
+    width: 500px;
+    height: auto;
+}
+
 .apresentacao_conteudo_imagem_software {
     height: 150px;
     width: auto;

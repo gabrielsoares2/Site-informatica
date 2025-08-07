@@ -10,7 +10,7 @@ word.addEventListener("mouseover", () =>{
 })
 
 word.addEventListener("mouseout", () =>{
-    word.textContent = "Criação de Currículo";
+    word.textContent = "Documentos";
     word.style.color = "#F2F2F2"
 })
 
@@ -20,7 +20,7 @@ excel.addEventListener("mouseover", () =>{
 })
 
 excel.addEventListener("mouseout", () =>{
-    excel.textContent = "Planilhas Automáticas";
+    excel.textContent = "Planilhas/Tabelas";
     excel.style.color = "#F2F2F2"
 })
 
@@ -30,7 +30,7 @@ powerpoint.addEventListener("mouseover", () =>{
 })
 
 powerpoint.addEventListener("mouseout", () =>{
-    powerpoint.textContent = "Apresentações";
+    powerpoint.textContent = "Apresentações/Slides";
     powerpoint.style.color = "#F2F2F2"
 })
 
