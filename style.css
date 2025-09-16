@@ -56,6 +56,28 @@ a {
     cursor: pointer;
 }
 
+button {
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    font-size: 20px;
+    font-family: var(--font-botao);
+}
+
+input[type="text"] {
+    font-size: 20px;
+}
+
+input[type="button"] {
+    cursor: pointer;
+    font-size: 20px;
+    font-family: var(--font-botao);
+}
+
+.feedback {
+    margin-top: 20px;
+}
+
 .cabecalho {
     display: flex;
     align-items: center;
