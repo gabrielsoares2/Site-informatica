@@ -24,10 +24,10 @@
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 37.57px;
-    letter-spacing: 0.19em;
+    line-height: 2.348rem;
+    letter-spacing: 0.19rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -60,22 +60,22 @@ button {
     cursor: pointer;
     height: auto;
     width: auto;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-family: var(--font-botao);
 }
 
 input[type="text"] {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 input[type="button"] {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-family: var(--font-botao);
 }
 
 .feedback {
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .cabecalho {
@@ -83,7 +83,7 @@ input[type="button"] {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    height: 50px;
+    height: 3.125rem;
     position: relative;
     overflow: hidden;
     background: linear-gradient(rgba(0, 0, 0), rgb(5, 30, 48), rgba(0, 0, 0));
@@ -116,7 +116,7 @@ input[type="button"] {
 }
 
 .apresentacao_conteudo {
-    padding-top: 20px;
+    padding-top: 1.25rem;
     padding-left: 1.25rem;
     padding-bottom: 4rem;
     position: relative;
@@ -163,23 +163,23 @@ input[type="button"] {
 }
 
 .apresentacao_conteudo_imagem {
-    height: 230px;
+    height: 14.375rem;
     width: auto;
     vertical-align: middle;
 }
 
 .apresentacao_conteudo_imagem_guias {
-    width: 1000px;
+    width: 62.5rem;
     height: auto;
 }
 
 .apresentacao_conteudo_imagem_m_m_x {
-    width: 500px;
+    width: 31.25rem;
     height: auto;
 }
 
 .apresentacao_conteudo_imagem_software {
-    height: 150px;
+    height: 9.375rem;
     width: auto;
     vertical-align: middle;
 }
@@ -233,7 +233,7 @@ input[type="button"] {
     background-position: center; 
     background-attachment: fixed;
     background-repeat: no-repeat;
-    padding-top: 20px;
+    padding-top: 1.25rem;
     padding-left: 1.25rem;
     padding-bottom: 4rem;
     position: relative;
@@ -242,7 +242,7 @@ input[type="button"] {
 }
 
 .jogos {
-    padding-top: 20px;
+    padding-top: 1.25rem;
     padding-left: 1.25rem;
     padding-bottom: 4rem;
     position: relative;
@@ -257,10 +257,17 @@ input[type="button"] {
     justify-content: center;
     background-color: black;
     color: white;
-    height: 30px;
+    height: 1.875rem;
     bottom: 0;
     width: 100%;
     z-index: 1000;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
 }
 
 @media (max-width: 1200px) {
@@ -272,7 +279,7 @@ input[type="button"] {
     .apresentacao {
         flex-direction: column;
         padding: 5% 5%;
-        gap: 30px;
+        gap: 1.875rem;
     }
 
     img {
@@ -280,4 +287,7 @@ input[type="button"] {
         width: 30%;
     }
 
+    .apresentacao_conteudo_texto {
+        flex-wrap: wrap;
+    }
 }
