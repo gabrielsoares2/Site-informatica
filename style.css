@@ -292,12 +292,24 @@ html, body {
         width: 30%;
     }
 
+    .apresentacao_conteudo {
+        padding: 0;
+    }
+
     .apresentacao_conteudo_texto {
         flex-wrap: wrap;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .apresentacao_conteudo_texto_office {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        width: 100%;
     }
 
     .apresentacao_conteudo_imagem_guias {
