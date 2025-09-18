@@ -91,9 +91,25 @@ input[type="button"] {
     border-bottom: 1px solid rgba(51, 168, 219, 1);
 }
 
+.cabecalho_nav {
+    display: flex;
+    gap: 1rem;
+}
+
 .cabecalho_nav_anchor {
     text-decoration: none;
     color: #F2F2F2;
+    transition: color 0.3s ease;
+}
+
+.cabecalho_nav_anchor:hover {
+    color: rgba(51, 168, 219, 1);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 .apresentacao_titulo {
@@ -320,5 +336,25 @@ html, body {
     .apresentacao_conteudo_imagem_m_m_x {
         width: 20rem;
         height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+
+    .cabecalho_nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #333;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .cabecalho_nav.show {
+        display: flex;
     }
 }
