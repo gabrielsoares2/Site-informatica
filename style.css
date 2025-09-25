@@ -248,6 +248,19 @@ input[type="button"] {
     flex-wrap: wrap;
 }
 
+.sistemas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.apresentacao_conteudo_imagem_sistema {
+    height: 25rem;
+    width: auto;
+}
+
 #mouse_teclado {
     background-image: url(img/wallpaper.jpg);
     background-size: cover;  
@@ -336,6 +349,11 @@ html, body {
     .apresentacao_conteudo_imagem_m_m_x {
         width: 20rem;
         height: auto;
+    }
+
+    .apresentacao_conteudo_imagem_sistema {
+        height: 6rem;
+        width: auto;
     }
 
     .menu-toggle {
