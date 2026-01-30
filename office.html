@@ -17,7 +17,7 @@
             <a class="cabecalho_nav_anchor" href="#pacoteoffice">Pacote Office</a>
             <a class="cabecalho_nav_anchor" href="#mouse_teclado">Mouse e Teclado</a>
             <a class="cabecalho_nav_anchor" href="#conceitos">Conceitos da Informática</a>
-            <a class="cabecalho_nav_anchor" href="https://aprendizado-mouse-teclado.vercel.app/acerteAlvo.html">Jogos</a>
+            <a class="cabecalho_nav_anchor" href="#jogos">Jogos</a>
         </nav>
 
         <div class="tema_teste">
@@ -28,22 +28,27 @@
 
     <main class="apresentacao">
 
-        <section class="apresentacao_conteudo" id="pacoteoffice">
+        <section class="apresentacao_conteudo">
 
-            <h2 class="apresentacao_conteudo_titulo">O que é informática?</h2> <br>
+            <h2 class="apresentacao_conteudo_titulo">Apostilas📖 e Feedback✍️</h2> <br>
 
-            <div class="apresentacao_conteudo_texto">
-                <div class="apresentacao_conteudo_texto_informatica">
-                    <p class="informatica_texto">Informática é tudo o que envolve o uso da tecnologia para <em>criar</em>, <em>armazenar</em>, <em>processar</em> e <em>compartilhar informações</em>.</p>
-                    <p>Ela está presente em: <br>
-                        <ul class="lista_simples">
-                            <li>Computadores</li>
-                            <li>Celulares</li>
-                            <li>Caixas eletrônicos</li>
-                            <li>Internet</li>
-                            <li>Sistemas de empresas e escolas, etc.</li>
-                        </ul>
-                    </p>
+            <div class="apresentacao_conteudo_feedback">
+                <h4>Acesse sua apostila clicando abaixo:</h4> <br>
+                <a href="https://apostiladigital.grupooportunidade.com.br/" target="_blank"><button type="button">Apostilas📖</button></a>
+
+                <div class="feedback">
+                    
+                    <input type="text" id="feedback" placeholder="Deixe sua opinião aqui">
+                    <input type="button" value="Enviar" onclick="enviarFeedback()">
+                    <p id="mensagem-status" style="margin-left: 10px; color: green;"></p>
+
+                </div>
+
+                <div class="atividades"><br>
+                    <h4>Teste os seus conhecimentos👇</h4><br>
+                    <a href="planilhas/ListadeCompras.xlsx" download="ListadeCompras.xlsx">
+                        Baixar Planilha!
+                    </a>
                 </div>
             </div>
 
@@ -51,45 +56,36 @@
 
         <section class="apresentacao_conteudo" id="pacoteoffice">
 
-            <h2 class="apresentacao_conteudo_titulo">Por que aprender informática?</h2> <br>
+            <h2 class="apresentacao_conteudo_titulo">Pacote Office</h2> <br>
 
             <div class="apresentacao_conteudo_texto">
-                <div class="apresentacao_conteudo_texto_informatica">
-                    <p><em>Aprender informática básica</em> não é mais um diferencial — <em>é uma necessidade</em>.
-                    Hoje, praticamente tudo ao nosso redor depende da tecnologia, e quem não entende o básico acaba enfrentando dificuldades até em tarefas simples do dia a dia.</p>
-                    <p>A informática está presente em diversas áreas da nossa vida, como:</p>
-                    <p><strong>Trabalho</strong></p>
-                    <p>Muitas vagas exigem <em>conhecimentos básicos em computador</em>, como digitar textos, usar e-mail, planilhas e sistemas simples. Mesmo profissões que não são da área de tecnologia utilizam o computador diariamente.</p>
+                <div class="apresentacao_conteudo_texto_office">
+                    <span><h3 id="word">Documentos</h3></span>
+                    <img src="img/word_logo.png" class="apresentacao_conteudo_imagem" alt="Logo do Word">
+                </div>
 
-                    <p><strong>Estudos</strong></p>
-                    <p>Escolas, cursos e faculdades utilizam plataformas digitais, trabalhos online, pesquisas na internet e envio de atividades por e-mail. Sem o básico, acompanhar os estudos se torna muito mais difícil.</p>
+                <div class="apresentacao_conteudo_texto_office">
+                    <span><h3 id="excel">Planilhas/Tabelas</h3></span>
+                    <img src="img/excel_logo.png" class="apresentacao_conteudo_imagem" alt="Logo do Excel">
+                </div>
 
-                    <p><strong>Bancos e finanças</strong></p>
-                    <p>Aplicativos bancários, pagamentos, transferências, boletos e consultas de saldo são feitos, em grande parte, de forma digital. Saber usar o computador e o celular traz mais autonomia e segurança.</p>
-
-                    <p><strong>Serviços públicos</strong></p>
-                    <p>Agendamentos, consultas, documentos, benefícios e inscrições são feitos pela internet. Ter conhecimento básico em informática evita filas, deslocamentos desnecessários e perda de tempo.</p>
-
-                    <p>Aprender informática básica significa ganhar independência, economizar tempo e estar preparado para o mundo atual.</p>
+                <div class="apresentacao_conteudo_texto_office">
+                    <span><h3 id="powerpoint">Apresentações/Slides</h3></span>
+                    <img src="img/powerpoint_logo.png" class="apresentacao_conteudo_imagem" alt="Logo do PowerPoint">
                 </div>
             </div>
 
-        </section>
-
-        <section>
-
-            <h2 class="apresentacao_conteudo_titulo">Computador não é só "computador"</h2> <br>
+            <h2 class="apresentacao_conteudo_titulo">Guias e Grupos</h2> <br>
 
             <div class="apresentacao_conteudo_texto">
-                <div class="apresentacao_conteudo_texto_informatica">
-                    <p>Quando falamos “computador”, geralmente pensamos só no gabinete ou notebook, mas ele é formado por várias partes que trabalham juntas.</p>
-                    <p>Um computador precisa de: <br>
-                        <ul class="lista_simples">
-                            <li>Equipamentos físicos</li>
-                            <li>Programas</li>
-                            <li>Pessoas usando corretamente</li>
-                        </ul>
-                    </p>
+                <div class="apresentacao_conteudo_texto_office">
+                    <img src="img/guias_grupos.png" class="apresentacao_conteudo_imagem_guias" alt="Guias office">
+                </div>
+            </div> <br>
+
+            <div class="apresentacao_conteudo_texto">
+                <div class="apresentacao_conteudo_texto_office">
+                    <img src="img/mini_max_fechar.png" class="apresentacao_conteudo_imagem_m_m_x" alt="Guias office">
                 </div>
             </div>
 
@@ -97,10 +93,34 @@
 
         <section class="apresentacao_conteudo" id="conceitos">
 
+            <h2 class="apresentacao_conteudo_titulo">Conceitos da Informática</h2> <br>
+
+            <div class="apresentacao_conteudo_conceitos">
+                <h3>Temos dois conceitos básicos de informática:</h3> <br>
+
+                <div class="conceitos">
+
+                    <div class="conceitos_logo">
+                        <span><h4 id="hardware">Hardware</h4></span>
+                        <img src="img/hardware_logo.png" class="apresentacao_conteudo_imagem" alt="Logo do hardware">
+                    </div>
+
+                    <div class="conceitos_logo">
+                        <span><h4 id="software">Software</h4></span>
+                        <img src="img/software_logo.png" class="apresentacao_conteudo_imagem" alt="Logo do software">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="apresentacao_conteudo">
+
             <h2 class="apresentacao_conteudo_titulo">Hardware</h2> <br>
 
             <div class="apresentacao_conteudo_conceitos">
-                <h3>Toda a parte <em>física</em> do computador, tudo que podemos <em>tocar</em>.</h3> <br>
+                <h3>Componentes internos e externos:</h3> <br>
 
                 <div class="conceitos">
 
@@ -127,7 +147,7 @@
                     </div>
 
                     <div class="conceitos_logo">
-                        <span><h4 id="externos">Externos</h4></span>
+                        <span><h4 id="internos">Externos</h4></span>
                         <div class="externos">
                             <div class="legenda">
                                 <img src="img/mouse.png" class="apresentacao_conteudo_imagem" alt="Logo do software">
@@ -158,12 +178,12 @@
             <h2 class="apresentacao_conteudo_titulo">Software</h2> <br>
 
             <div class="apresentacao_conteudo_conceitos">
-                <h3>Toda a parte <em>lógica</em> do computador</h3> <br>
+                <h3>Alguns tipos de softwares:</h3> <br>
 
                 <div class="conceitos">
 
                     <div class="conceitos_logo">
-                        <span><h4 id="internos"><em>Programas</em>, <em>aplicativos</em>, etc...</h4></span>
+                        <span><h4 id="internos">Programas, redes sociais, aplicativos, etc...</h4></span>
                         <div class="softwares">
                             <div class="legenda">
                                 <img src="img/chrome.png" class="apresentacao_conteudo_imagem_software" alt="Logo do hardware">
@@ -194,13 +214,11 @@
             <h2 class="apresentacao_conteudo_titulo">Sistemas operacionais</h2> <br>
 
             <div class="apresentacao_conteudo_conceitos">
-                <h3>Para que serve um sistema operacional?</h3> <br>
+                <h3>Exemplos de sistemas:</h3> <br>
 
                 <div class="conceitos">
 
                     <div class="conceitos_logo">
-                        <span><h4>O sistema operacional é o principal programa do computador.
-                                Ele é o responsável por permitir que você use tudo.</h4></span>
                         <div class="sistemas">
                             <div class="legenda">
                                 <img src="img/windows.gif" class="apresentacao_conteudo_imagem_sistema" alt="gif interface windows">
@@ -230,17 +248,6 @@
 
         </section>
 
-        <section class="mouse_teclado" id="mouse_teclado">
-
-            <h2 class="apresentacao_conteudo_titulo">Mouse e Teclado</h2> <br>
-
-            <div class="apresentacao_conteudo_mt_links">
-                <p>Mouse é a maneira que conseguimos mexer no computador, seja clicar, arrastar, selecionar. &#x1F5B1; <a href="https://aprendizado-mouse-teclado.vercel.app/acerteAlvo.html" target="_blank">Clique Aqui!</a></p>  <br>
-                <p>Teclado é como fazemos para digitar no computador, temos como colocar textos, acentos, números. &#9000; <a href="https://agilefingers.com/pt/curso/exercicio-27" target="_blank">Clique Aqui!</a></p>
-            </div>
-
-        </section>
-
         <section class="jogos" id="jogos">
 
             <h2 class="apresentacao_conteudo_titulo">Jogos</h2>
@@ -254,28 +261,13 @@
 
         </section>
 
-        <section class="apresentacao_conteudo">
+        <section class="mouse_teclado" id="mouse_teclado">
 
-            <h2 class="apresentacao_conteudo_titulo">Apostilas📖 e Feedback✍️</h2> <br>
+            <h2 class="apresentacao_conteudo_titulo">Mouse e Teclado</h2> <br>
 
-            <div class="apresentacao_conteudo_feedback">
-                <h4>Acesse sua apostila clicando abaixo:</h4> <br>
-                <a href="https://apostiladigital.grupooportunidade.com.br/" target="_blank"><button type="button">Apostilas📖</button></a>
-
-                <div class="feedback">
-                    
-                    <input type="text" id="feedback" placeholder="Deixe sua opinião aqui">
-                    <input type="button" value="Enviar" onclick="enviarFeedback()">
-                    <p id="mensagem-status" style="margin-left: 10px; color: green;"></p>
-
-                </div>
-
-                <div class="atividades"><br>
-                    <h4>Teste os seus conhecimentos👇</h4><br>
-                    <a href="planilhas/ListadeCompras.xlsx" download="ListadeCompras.xlsx">
-                        Baixar Planilha!
-                    </a>
-                </div>
+            <div class="apresentacao_conteudo_mt_links">
+                Vamos iniciar com esse para que você pegue o jeito com o mouse! &#x1F5B1; <a href="https://aprendizado-mouse-teclado.vercel.app/acerteAlvo.html" target="_blank">Clique Aqui!</a>  <br>
+                Agora que pegou o jeito com o mouse, vamos praticar a digitação! &#9000; <a href="https://agilefingers.com/pt/curso/exercicio-27" target="_blank">Clique Aqui!</a>
             </div>
 
         </section>
