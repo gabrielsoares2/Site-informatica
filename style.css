@@ -92,6 +92,10 @@ a {
     text-decoration: none;
 }
 
+a:hover{
+    color: var(--cor-do-botao);
+}
+
 button {
     cursor: pointer;
     height: auto;
@@ -209,7 +213,7 @@ main{
 
 .apresentacao_conteudo_texto {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     max-width: 720px;
     margin: 0 auto;
@@ -223,6 +227,18 @@ main{
 .apresentacao_conteudo_texto strong {
     color: var(--cor-de-titulo);
     font-weight: 600px;
+}
+
+.apresentacao_conteudo:hover .apresentacao_conteudo_titulo {
+    transform: scale(1.08);
+    color: var(--cor-do-botao);
+    text-shadow: 0 0 12px rgba(0, 255, 156, 0.35);
+    transition: 0.3s;
+}
+
+.apresentacao_conteudo:hover .apresentacao_conteudo_texto {
+    transform: scale(1.02);
+    transition: 0.3s;
 }
 
 .lista_simples{
