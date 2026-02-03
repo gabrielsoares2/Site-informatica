@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerte o Alvo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-jogo">
+
+<header class="hud">
+    <div class="hud_item">
+        Pontos: <span id="pontos">0</span>
+    </div>
+
+    <div class="hud_item">
+        Objetivo:
+        <input type="number" id="objetivo" placeholder="Ex: 10">
+    </div>
+</header>
+
+<main class="container-jogo">
+    <div id="area_jogo">
+        <img id="alvo" src="img/alvo.png" alt="Alvo">
+    </div>
+</main>
+
+<div id="vitoria" class="overlay hidden">
+    <div class="vitoria_card">
+        <h2>🎉 Parabéns!</h2>
+        <p>Você atingiu o objetivo!</p>
+        <button id="btn_reiniciar">Jogar novamente</button>
+    </div>
+</div>
+
+<script src="alvo.js"></script>
+</body>
+</html>

@@ -36,6 +36,10 @@ body{
     padding-top: 3.125rem;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     user-select: none;
     caret-color: transparent;
@@ -719,6 +723,296 @@ main{
 .hero_card:hover .hero_icon {
     transform: scale(1.2);
 }
+
+/* ============================= */
+/* JOGO - ACERTE O ALVO */
+/* ============================= */
+
+#area_jogo {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+#alvo {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+
+    object-fit: contain;
+    user-select: none;
+
+    animation: aparecer 0.3s ease-out;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 156, 0.5));
+}
+
+#alvo:hover {
+    transform: scale(1.1);
+    transition: transform 0.15s ease;
+}
+
+#alvo:active {
+    transform: scale(0.9);
+    filter: brightness(1.2);
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#pontos {
+    display: inline-block;
+}
+
+.pontuacao-animada {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+.ponto-flutuante {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00FF9C;
+    pointer-events: none;
+    animation: flutuar 0.8s ease-out forwards;
+    text-shadow: 0 0 8px rgba(0, 255, 156, 0.6);
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-40px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+
+
+/* ===== SOMENTE PARA O JOGO ===== */
+.pagina-jogo {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-jogo header {
+    flex-shrink: 0;
+}
+
+.pagina-jogo #area_jogo {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🔹 página do jogo */
+.pagina-jogo {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #102A38, #0B1C26);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* 🔹 HUD superior */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: rgba(16, 42, 56, 0.95);
+    border-bottom: 1px solid rgba(0, 255, 156, 0.3);
+    color: #C7D0D9;
+}
+
+.hud_item {
+    font-size: 1.2rem;
+}
+
+.hud input {
+    width: 80px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,255,156,0.4);
+    background: #0B1C26;
+    color: #00FF9C;
+}
+
+/* 🔹 container central */
+.container-jogo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 área do jogo */
+#area_jogo {
+    position: relative;
+    width: 85%;
+    max-width: 850px;
+    height: 60vh;
+    background: linear-gradient(180deg, #112A36, #0E2430);
+    border-radius: 18px;
+    border: 1px solid rgba(0, 255, 156, 0.35);
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(0, 255, 156, 0.08);
+    overflow: hidden;
+}
+
+/* 🔹 alvo */
+#alvo {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    user-select: none;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 156, 0.6));
+    transition: transform 0.1s ease;
+}
+
+#alvo:active {
+    transform: scale(0.9);
+}
+
+/* 🔹 pontuação animada */
+#pontos {
+    display: inline-block;
+}
+
+.pontuacao-animada {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* 🔹 +1 flutuante */
+.ponto-flutuante {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00FF9C;
+    pointer-events: none;
+    animation: flutuar 0.8s ease-out forwards;
+    text-shadow: 0 0 10px rgba(0, 255, 156, 0.8);
+}
+
+@keyframes flutuar {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-40px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.vitoria_card {
+    background: linear-gradient(180deg, #102833, #0B1E28);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 156, 0.4);
+    box-shadow: 0 0 40px rgba(0, 255, 156, 0.25);
+    animation: surgir 0.4s ease;
+}
+
+.vitoria_card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.vitoria_card p {
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+.vitoria_card button {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: none;
+    background: #00FF9C;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.vitoria_card button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes surgir {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* 🔹 mobile */
+@media (max-width: 600px) {
+    #area_jogo {
+        height: 65vh;
+    }
+
+    .hud {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 
 
 @keyframes fadeOffice {
