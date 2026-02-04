@@ -52,7 +52,7 @@ function iniciarJogo() {
 }
 
 function atualizarBarra() {
-    const objetivo = parseInt(objetivoInput.value) || 10;
+    const objetivo = parseInt(objetivoInput.value) || 25;
     const porcentagem = (pontos / objetivo) * 100;
     document.getElementById("progressBar").style.width = porcentagem + "%";
 }
