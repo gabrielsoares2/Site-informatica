@@ -51,10 +51,18 @@ function iniciarJogo() {
     }, 2000);
 }
 
+function atualizarBarra() {
+    const objetivo = parseInt(objetivoInput.value) || 10;
+    const porcentagem = (pontos / objetivo) * 100;
+    document.getElementById("progressBar").style.width = porcentagem + "%";
+}
+
+
 // 🔹 clique no alvo
 alvo.addEventListener("click", (evento) => {
     pontos++;
     pontosEl.textContent = pontos;
+    atualizarBarra();
 
     // animação da pontuação
     pontosEl.classList.remove("pontuacao-animada");
@@ -85,10 +93,38 @@ document.getElementById("btn_reiniciar").addEventListener("click", () => {
     pontosEl.textContent = 0;
     alvo.style.display = "block";
 
+    document.getElementById("progressBar").style.width = "0%";
     document.getElementById("vitoria").classList.add("hidden");
 
     iniciarJogo();
 });
+
+const particulasContainer = document.getElementById("particulas");
+
+
+function criarParticula() {
+    const particula = document.createElement("div");
+    particula.classList.add("particula");
+
+    const size = Math.random() * 6 + 4;
+    particula.style.width = size + "px";
+    particula.style.height = size + "px";
+
+    particula.style.left = Math.random() * 100 + "%";
+    particula.style.top = "100%";
+
+    const duracao = Math.random() * 5 + 4;
+    particula.style.animationDuration = duracao + "s";
+
+    particulasContainer.appendChild(particula);
+
+    setTimeout(() => {
+        particula.remove();
+    }, duracao * 1000);
+}
+
+setInterval(criarParticula, 120);
+
 
 // 🔹 inicia quando a página carregar
 window.addEventListener("load", iniciarJogo);
