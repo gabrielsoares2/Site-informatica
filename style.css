@@ -1114,6 +1114,7 @@ main{
   display: flex;
   flex-direction: column;
   color: #fff;
+    overflow: hidden;
 }
 
 /* HUD */
@@ -1132,7 +1133,9 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  padding: 16px;
+  overflow: hidden;
 }
 
 /* Palavra */
@@ -1229,11 +1232,13 @@ main{
 }
 
 .keyboard {
-  margin-top: 35px;
+  width: 100%;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  user-select: none;
+  gap: 8px;
+  transform: scale(0.95);
+  transform-origin: center bottom;
 }
 
 .row {
@@ -1252,14 +1257,15 @@ main{
 
 .key {
   width: 55px;
-  height: 55px;
+    min-width: 42px;
+  height: 42px;
   background: linear-gradient(180deg, #173847, #0e2430);
   border-radius: 10px;
   border: 1px solid rgba(0, 255, 156, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   color: #cffff0;
   box-shadow:
@@ -1325,6 +1331,7 @@ main{
   gap: 20px;
   color: #fff;
   z-index: 999;
+    overflow: hidden;
 }
 
 .final-score {
@@ -1635,4 +1642,22 @@ main{
         padding: 1rem;
         text-align: center;
     }
+}
+
+@media (max-height: 700px) {
+  .keyboard {
+    transform: scale(0.85);
+  }
+
+  .key {
+    min-width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+@media (max-height: 600px) {
+  .keyboard {
+    transform: scale(0.78);
+  }
 }
