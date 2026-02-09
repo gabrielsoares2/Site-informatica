@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="key.css">
+    <title>Digitação</title>
+</head>
+<body class="pagina-jogo">
+  <div id="game">
+
+    <!-- HUD -->
+    <header class="hud">
+      <span>Pontos: <strong id="score">0</strong></span>
+      <span id="combo" class="combo hidden">🔥 Combo x1</span>
+      <span>Tempo: <strong id="time">60</strong>s</span>
+    </header>
+
+    <!-- Área principal -->
+     <div class="mode-selector">
+        <button id="modeWords" class="active">Palavras</button>
+        <button id="modePhrases">Frases</button>
+    </div>
+    <main class="game-area">
+      <p class="instruction">Digite a palavra:</p>
+
+      <div id="wordDisplay"></div>
+
+      <input 
+        type="text" 
+        id="input" 
+        placeholder="Comece a digitar..."
+        autocomplete="off"
+      />
+
+      <div id="keyboard" class="keyboard">
+        <div class="row" id="row1"></div>
+        <div class="row" id="row2"></div>
+        <div class="row" id="row3"></div>
+        <div class="row" id="row4"></div>
+        <div class="row" id="row5"></div>
+      </div>
+
+      <div id="feedback"></div>
+    </main>
+
+    <div id="typingGameOver" class="hidden">
+        <h2>Fim de Jogo</h2>
+        <div class="final-score">
+            <span>Sua pontuação</span>
+            <strong id="finalScore">0</strong>
+        </div>
+        <button id="typingResetBtn">Jogar novamente</button>
+    </div>
+
+    <!-- Barra de progresso -->
+    <footer class="progress-container">
+      <div id="progress"></div>
+    </footer>
+
+  </div>
+
+  <script src="mainkey.js"></script>
+</body>
+
+</html>
