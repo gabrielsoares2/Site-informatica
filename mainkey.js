@@ -31,7 +31,7 @@ const phrases = [
 ];
 
 let gameMode = "words";
-const GAME_TIME = 600;
+const GAME_TIME = 900;
 
 let remainingWords = [];
 let remainingPhrases = [];
