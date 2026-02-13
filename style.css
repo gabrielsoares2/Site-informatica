@@ -1417,6 +1417,119 @@ main{
     padding-top: 0 !important;
 }
 
+/* 🌟 Easter Egg - Texto flutuante */
+.floating-feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  animation: floatFeedback 1.2s ease forwards;
+  z-index: 0;
+}
+
+@keyframes floatFeedback {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(1);
+  }
+}
+
+/* 🔥 LIMIT BREAK EFFECT */
+body.limit-break::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 255, 204, 0.12),
+      transparent 65%
+    );
+  animation: limitPulse 1.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes limitPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+/* 🎮 LIMIT BAR */
+
+.limit-container {
+  width: 200px;
+  height: 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+  margin: 10px auto;
+  position: relative;
+}
+
+.limit-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ffcc, #00ccff);
+  transition: width 0.3s ease;
+  border-radius: 20px;
+}
+
+/* 🔥 FULL LIMIT MODE */
+.limit-bar.full {
+  animation: limitGlow 0.6s linear infinite;
+  background: linear-gradient(
+    90deg,
+    #00ffff,
+    #00ffcc,
+    #ffffff,
+    #00ffcc,
+    #00ffff
+  );
+  background-size: 300% 100%;
+}
+
+/* brilho animado */
+@keyframes limitGlow {
+  0% { background-position: 0% 0; }
+  100% { background-position: 300% 0; }
+}
+
+/* 💥 Shake quando erra */
+.limit-container.shake {
+  animation: damageShake 0.3s;
+}
+
+@keyframes damageShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+
 /* 🔹 mobile */
 @media (max-width: 600px) {
     #area_jogo {

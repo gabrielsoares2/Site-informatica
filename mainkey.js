@@ -31,7 +31,11 @@ const phrases = [
 ];
 
 let gameMode = "words";
-const GAME_TIME = 600;
+const GAME_TIME = 900;
+
+let totalTyped = 0;      
+let totalErrors = 0;     
+let correctChars = 0;    
 
 let remainingWords = [];
 let remainingPhrases = [];
@@ -91,6 +95,8 @@ const shiftMap = {
 let typingGameActive = false;
 let timer = null;
 
+const LIMIT_BREAK_COMBO = 5;
+
 function startTypingGame() {
   // Estado
   typingGameActive = true;
@@ -99,6 +105,9 @@ function startTypingGame() {
   score = 0;
   time = GAME_TIME;
   combo = 0;
+  totalTyped = 0;
+  totalErrors = 0;
+  correctChars = 0;
 
   scoreEl.textContent = "0";
   timeEl.textContent = GAME_TIME;
@@ -276,6 +285,14 @@ function highlightNextKey() {
 
   let keysToHighlight = [];
 
+  if (nextChar === " ") {
+    const spaceKey = document.querySelector('.key[data-key="space"]');
+  if (spaceKey) {
+    spaceKey.classList.add("next");
+  }
+    return;
+  }
+
   // 🔤 Maiúscula → precisa de Shift
   if (nextChar === nextChar.toUpperCase() && nextChar.match(/[A-Z]/)) {
     keysToHighlight.push("shift");
@@ -344,8 +361,44 @@ function renderWord() {
   });
 }
 
+function showFloatingFeedback() {
+  const messages = [
+    "Muito bem!",
+    "Excelente!",
+    "Boa!",
+    "Continue assim!",
+    "Digitando bem!"
+  ];
+
+  const msg = messages[Math.floor(Math.random() * messages.length)];
+
+  const el = document.createElement("div");
+  el.classList.add("floating-feedback");
+  el.textContent = msg;
+
+  document.body.appendChild(el);
+
+  setTimeout(() => {
+    el.remove();
+  }, 1200);
+}
+
+
+let previousLength = 0;
 // ⌨️ Digitação
 input.addEventListener("input", () => {
+
+  const currentLength = input.value.length;
+
+  if (currentLength > previousLength) {
+    totalTyped++;
+  }
+
+  previousLength = currentLength;
+
+  document.querySelectorAll('.key[data-key="backspace"]').forEach(k => {
+    k.classList.remove("next");
+  });
     highlightNextKey();
     renderWord();
 
@@ -360,21 +413,30 @@ input.addEventListener("input", () => {
 
   // ERRO
   if (!currentWord.startsWith(typed)) {
+    totalErrors++;
     feedback.textContent = "Erro ❌";
     feedback.style.color = "#ff4d4d";
     input.classList.add("error");
 
     combo = 0;
     comboEl.classList.add("hidden");
+
+    document.body.classList.remove("limit-break");
     
     if (keyEl) {
         keyEl.classList.add("wrong");
     }
 
-    renderWord();
-    highlightNextKey();
-    return;
+     document.querySelectorAll(".key").forEach(k => {
+      k.classList.remove("next");
+    });
 
+    const backspaceKey = document.querySelector('.key[data-key="backspace"]');
+    if (backspaceKey) {
+      backspaceKey.classList.add("next");
+    }
+
+    return;
   }
 
   input.classList.remove("error");
@@ -389,19 +451,22 @@ input.addEventListener("input", () => {
     comboEl.textContent = `🔥 Combo x${combo}`;
     comboEl.classList.remove("hidden");
 
+    if (combo >= LIMIT_BREAK_COMBO) {
+      document.body.classList.add("limit-break");
+    }
+
     comboEl.style.animation = "none";
     comboEl.offsetHeight;
     comboEl.style.animation = "comboPop 0.3s ease";
-
-    feedback.textContent = "Boa! ✅";
-    feedback.style.color = "#00ffcc";
 
     setTimeout(() => {
     document.querySelectorAll(".key").forEach(k => {
         k.classList.remove("correct", "wrong");
     });
     }, 100);
-
+    
+    correctChars += currentWord.length;
+    showFloatingFeedback();
     newWord();
     highlightNextKey();
     return;
@@ -421,6 +486,7 @@ modeWordsBtn.addEventListener("click", () => {
 
   remainingWords = [...words];
   newWord();
+  highlightNextKey();
 });
 
 modePhrasesBtn.addEventListener("click", () => {
@@ -431,6 +497,7 @@ modePhrasesBtn.addEventListener("click", () => {
 
   remainingPhrases = [...phrases];
   newWord();
+  highlightNextKey();
 });
 
 function formatTime(seconds) {
@@ -454,8 +521,21 @@ function countdown() {
   timer = null;
 
   input.disabled = true;
+  const accuracy = totalTyped > 0 
+    ? ((correctChars / totalTyped) * 100).toFixed(1) 
+    : 0;
 
-  document.getElementById("finalScore").textContent = score;
+  const minutes = GAME_TIME / 60;
+  const wpm = minutes > 0 
+    ? ((correctChars / 5) / minutes).toFixed(1)
+    : 0;
+    
+    document.getElementById("finalScore").textContent = score;
+    document.getElementById("finalAccuracy").textContent = accuracy;
+    document.getElementById("finalErrors").textContent = totalErrors;
+    document.getElementById("finalTyped").textContent = totalTyped;
+    document.getElementById("finalWPM").textContent = wpm;
+
   document.getElementById("typingGameOver").classList.remove("hidden");
 }
 }
