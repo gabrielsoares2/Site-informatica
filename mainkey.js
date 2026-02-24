@@ -10,7 +10,6 @@ const words = [
 const phrases = [
   "O mouse é um hardware utilizado para interagir com o computador",
   "O teclado permite digitar textos e comandos no sistema",
-"Duda, você tem que fazer 5 aulas por dia -_-",
   "Hardware são as peças físicas do computador",
   "Software são os programas instalados no computador",
   "O Windows é um sistema operacional da Microsoft",
