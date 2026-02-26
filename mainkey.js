@@ -4,7 +4,27 @@ const words = [
   "computador",
   "programação",
   "internet",
-  "javascript"
+  "javascript",
+  "abacate",
+  "neblina",
+  "fagulha",
+  "travesseiro",
+  "oceano",
+  "relâmpago",
+  "girassol",
+  "mistério",
+  "caderno",
+  "horizonte",
+  "bússola",
+  "tempestade",
+  "areia",
+  "castelo",
+  "sussurro",
+  "janela",
+  "labirinto",
+  "estrela",
+  "montanha",
+  "chuva"
 ];
 
 const phrases = [
