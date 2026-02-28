@@ -51,7 +51,7 @@ const phrases = [
 ];
 
 let gameMode = "words";
-const GAME_TIME = 900;
+const GAME_TIME = 600;
 
 let totalTyped = 0;      
 let totalErrors = 0;     
