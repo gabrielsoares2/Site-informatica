@@ -47,7 +47,32 @@ const phrases = [
   "Um arquivo é um conjunto de informações armazenadas",
   "Uma pasta serve para organizar arquivos",
   "O monitor exibe as informações do computador",
-  "O computador é uma ferramenta essencial no dia a dia"
+  "O computador é uma ferramenta essencial no dia a dia",
+  "A impressora é utilizada para colocar documentos no papel",
+  "O scanner permite digitalizar imagens e documentos",
+  "O e-mail é uma forma de comunicação eletrônica",
+  "O pendrive é usado para transportar arquivos",
+  "O backup serve para proteger os dados importantes",
+  "O antivírus ajuda a proteger o computador contra ameaças",
+  "A área de trabalho é a tela principal do sistema",
+  "O clique duplo abre arquivos e programas",
+  "O botão direito do mouse exibe opções adicionais",
+  "A barra de tarefas mostra os programas em uso",
+  "O Wi-Fi permite conexão sem fio com a internet",
+  "O login é necessário para acessar uma conta",
+  "A senha protege o acesso às informações",
+  "Atualizações corrigem erros e melhoram o sistema",
+  "Os aplicativos executam tarefas específicas",
+  "A nuvem permite armazenar arquivos online",
+  "O download baixa arquivos da internet",
+  "O upload envia arquivos para a internet",
+  "O cursor indica a posição na tela",
+  "O teclado possui teclas de atalho úteis",
+  "O sistema pode travar quando há muitos programas abertos",
+  "O reinício pode resolver problemas no computador",
+  "A tela sensível ao toque permite interação direta",
+  "Os ícones representam programas ou arquivos",
+  "O explorador de arquivos ajuda a localizar documentos"
 ];
 
 let gameMode = "words";
